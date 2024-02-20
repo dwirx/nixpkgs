@@ -71,7 +71,7 @@
         ];
       shellAliases = {
         cp = "cp -iv";
-        mv = "mv iv";
+        # mv = "mv iv";
         rm = "trash-put";
         cat = "bat";
         vim = "nvim";
