@@ -8,6 +8,7 @@
     vim
     btop
     gdu
+    nodejs
 
     #files
     ranger
@@ -21,7 +22,7 @@
     neofetch
     unzip
     fzf-zsh
-    tmux
+    # tmux
 
    ##
     direnv
@@ -74,9 +75,21 @@
         rm = "trash-put";
         cat = "bat";
         vim = "nvim";
-
         };
       };
+     # TMUX
+     programs.tmux = {
+         enable = true;
+         mouse = true;
+         shortcut = "a";
+         plugins = with pkgs.tmuxPlugins; [
+          sensible
+          pain-control
+          yank
+          prefix-highlight
+          better-mouse-mode
+         ];
+       };
 ############################ Batas Program
 
   programs.home-manager.enable = true;
