@@ -37,7 +37,10 @@ Saya ingin menyiapkan proyek nodejs menggunakan express NodeJs versi 18.x LTS.
 mkdir -p nodejs-21-example
 cd nodejs-21-example
 ```
-
+### Donwload
+```bash
+curl -O https://raw.githubusercontent.com/dwirx/nixpkgs/main/template/flake.nix
+```
 Kemudian, kita akan menambahkan flake.nix berikut di root dari nodejs-21-example
 
 ```nix
