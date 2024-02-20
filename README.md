@@ -7,15 +7,15 @@
 ```bash
 nix flake show
 ## remotely 
-nix flake show github:bangundwir/nixpkgs
+nix flake show github:dwirx/nixpkgs
 ```
 
 #### Using nix shell remotely
 
 ```bash
 nix develop .#bun
-# nix develop github:bangundwir/nixpkgs#<NAME>
-nix develop github:bangundwir/nixpkgs#python
+# nix develop github:dwirx/nixpkgs#<NAME>
+nix develop github:dwirx/nixpkgs#python
 ```
 
 #### Update lock file
