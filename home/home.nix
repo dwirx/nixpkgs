@@ -163,6 +163,10 @@
   programs.home-manager.enable = true;
   # font.fontconfig.enable = true;
   # direnv
+  imports = [
+  ./btop.nix
+
+  ];
   programs = {
     direnv = {
       enable = true;
