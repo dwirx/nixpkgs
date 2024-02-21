@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     bat
     vim
-    btop
+    # btop
     gdu
     nodejs
     cargo
