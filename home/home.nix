@@ -41,21 +41,21 @@
   };
 
   # FISH
-  # programs.fish = {
-  #   enable = true;
-  #   # shellAbbrs = {
-  #   shellAliases = {
-  #     cp = "cp -iv";
-  #     mv = "mv iv";
-  #     rm = "trash-put";
-  #     cat = "bat";
-  #     vim = "nvim";
-  #     lg = "lazygit";
-  #     mans = '' man -k  . | cut -d " " -f 1 | fzf -m --preview "man {1}" '';
-  #     grep = "rg";
-  #
-  #   };
-  # };
+  programs.fish = {
+    enable = true;
+    # shellAbbrs = {
+    shellAliases = {
+      cp = "cp -iv";
+      mv = "mv iv";
+      rm = "trash-put";
+      cat = "bat";
+      vim = "nvim";
+      lg = "lazygit";
+      mans = '' man -k  . | cut -d " " -f 1 | fzf -m --preview "man {1}" '';
+      grep = "rg";
+
+    };
+  };
 
   # STARTSHIP
   programs.starship = {
