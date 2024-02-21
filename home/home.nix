@@ -88,12 +88,45 @@
       grep = "rg";
     };
     initExtraFirst = ''
-     # vi mode confi
-     VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
-     VI_MODE_SET_CURSOR=true
-     MODE_INDICATOR="%F{yellow}+%f"
-     KEYTIMEOUT=15
-     VI_MODE_PROMPT_INFO=true
+      # vi mode confi
+      VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+      VI_MODE_SET_CURSOR=true
+      MODE_INDICATOR="%F{yellow}+%f"
+      KEYTIMEOUT=15
+      VI_MODE_PROMPT_INFO=true
+
+      #Git
+      function gsts (){git status}
+      function gc (){git commit -am "$@"}
+      function ga (){git add "$@"}
+      function gs (){git switch "$@"}
+      function gm (){git merge "$@"}
+      function gcb (){git checkout -b "$@"}
+      function gca (){git commit --amend --no-edit -m "$@"}
+      function gu (){git reset --soft HEAD~1}
+      function gst (){git stash "$@"}
+      function gstp (){git stash pop "$@"}
+      function grmc (){git rm --cached "$@"}
+
+      function gpo (){git push origin "$@"}
+      function gplo (){git pull origin "$@"}
+      function gpu (){git push upstream "$@"}
+      function gplu (){git pull upstream  "$@"}
+
+
+      function gsm (){gs "master"}
+
+      function gpom (){gpo "master"}
+      function gpum (){gpu "master"}
+
+      function gplom (){gplo "master"}
+      function gplum (){gplu "master"}
+
+      function gplob (){gplo "$(git symbolic-ref --short HEAD)"}
+      function gplub (){gplu "$(git symbolic-ref --short HEAD)"}
+
+      function gpob (){gpo "$(git symbolic-ref --short HEAD)"}
+      function gpub (){gpu "$(git symbolic-ref --short HEAD)"}
 
 
     '';
@@ -164,7 +197,7 @@
   # font.fontconfig.enable = true;
   # direnv
   imports = [
-  ./btop.nix
+    ./btop.nix
 
   ];
   programs = {
