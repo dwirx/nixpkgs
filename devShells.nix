@@ -17,4 +17,18 @@
   go = pkgs.mkShell {
     buildInputs = [ pkgs.go ];
   };
+  pnpm = pkgs.mkShell {
+    description = "Nodejs with PNPM";
+    buildInputs = with pkgs;[
+      nodejs_21
+      (nodePackages.pnpm.override { nodejs = nodejs_21; })
+    ];
+  };
+  node20 = pkgs.mkShell {
+    description = "Nodejs 20 Development Evironment";
+    buildInputs = with pkgs; [
+      nodejs_20
+      (nodePackages.yarn.override { nodejs = nodejs_20; })
+    ];
+  };
 }
