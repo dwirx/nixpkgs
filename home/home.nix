@@ -36,11 +36,11 @@
 
 
   ];
-  #eza
-  programs.eza = {
-    enable = true;
-    enableAliases = true;
-  };
+  # #eza
+  # programs.eza = {
+  #   enable = true;
+  #   enableAliases = true;
+  # };
 
   # FISH
   programs.fish = {
@@ -82,6 +82,7 @@
       "z"
     ];
     shellAliases = {
+      ls = "lsd";
       cp = "cp -iv";
       # mv = "mv iv";
       rm = "trash-put";
@@ -204,6 +205,7 @@
   imports = [
     ./btop.nix
     ./shell.nix
+    ./config.nix
 
   ];
   programs = {
