@@ -82,7 +82,7 @@
       "z"
     ];
     shellAliases = {
-      ls = "lsd";
+      # ls = "lsd";
       cp = "cp -iv";
       # mv = "mv iv";
       rm = "trash-put";
