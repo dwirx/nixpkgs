@@ -31,6 +31,8 @@
     # New
     lazygit
     ripgrep
+    man
+    jq
 
 
   ];
@@ -88,6 +90,7 @@
       lg = "lazygit";
       mans = '' man -k  . | cut -d " " -f 1 | fzf -m --preview "man {1}" '';
       grep = "rg";
+      nf = "neofetch";
     };
     initExtraFirst = ''
       # vi mode confi
