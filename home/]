@@ -1,7 +1,0 @@
-{ ... }: {
-  # LSD
-  programs = {
-    lsd.enable = true;
-    dircolors.enable = true;
-  };
-}

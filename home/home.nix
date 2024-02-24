@@ -4,6 +4,11 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
   programs.neovim.enable = true;
   home.packages = with pkgs; [
+
+    #Language
+    bun
+    #############
+
     bat
     vim
     # btop
