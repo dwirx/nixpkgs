@@ -15,7 +15,14 @@ nix flake show github:dwirx/nixpkgs
 ```bash
 nix develop .#bun
 # nix develop github:dwirx/nixpkgs#<NAME>
+# List language shell
 nix develop github:dwirx/nixpkgs#python
+nix develop github:dwirx/nixpkgs#go
+nix develop github:dwirx/nixpkgs#bun
+nix develop github:dwirx/nixpkgs#node20
+nix develop github:dwirx/nixpkgs#pnpm
+nix develop github:dwirx/nixpkgs#zig
+
 ```
 
 #### Update lock file
