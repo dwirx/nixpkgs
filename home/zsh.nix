@@ -35,6 +35,7 @@
 
       ### "bat" as manpager
       # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+      # export MANPAGER="nvim -c 'set ft=man' -"
 
 
 
