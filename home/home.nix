@@ -106,7 +106,9 @@
       KEYTIMEOUT=15
       VI_MODE_PROMPT_INFO=true
 
-      #Git
+      ### "bat" as manpager
+      export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 
 
     '';
