@@ -107,7 +107,8 @@
       VI_MODE_PROMPT_INFO=true
 
       ### "bat" as manpager
-      export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+      # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 
 
 
