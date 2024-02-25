@@ -31,4 +31,10 @@
       (nodePackages.yarn.override { nodejs = nodejs_20; })
     ];
   };
+  zig = pkgs.mkShell {
+    description = "Zig development environment";
+    buildInputs = with pkgs; [
+      zig
+    ];
+  };
 }
