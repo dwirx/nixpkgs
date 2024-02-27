@@ -14,16 +14,8 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         description = "Ocaml.org development environment";
         default = pkgs.mkShell {
-          packages = with pkgs; [
-          ocaml
-          merlin
-          opam
-          libev
-          oniguruma
-          openssl
-          utop
-          gmp
-          ];
+          packages = with pkgs; [ ocaml ] ++
+            (with pkgs.ocamlPackages; [ dune_3 odoc ]);
         };
       });
     };
