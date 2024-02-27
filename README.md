@@ -155,3 +155,20 @@ direnv allow
 
 Saat Anda memasuki direktori proyek, direnv akan secara otomatis mengaktifkan lingkungan yang didefinisikan dalam `shell.nix` atau `flake.nix`
 
+# Usage as a flake
+
+[![FlakeHub](https://img.shields.io/endpoint?url=https://flakehub.com/f/dwirx/nixpkgs/badge)](https://flakehub.com/flake/dwirx/nixpkgs)
+
+Add nixpkgs to your `flake.nix`:
+
+```nix
+{
+  inputs.nixpkgs.url = "https://flakehub.com/f/dwirx/nixpkgs/*.tar.gz";
+
+  outputs = { self, nixpkgs }: {
+    # Use in your outputs
+  };
+}
+
+```
+

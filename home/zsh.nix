@@ -36,34 +36,37 @@
 
     };
     initExtraFirst = ''
-            # vi mode confi
-            VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
-            VI_MODE_SET_CURSOR=true
-            MODE_INDICATOR="%F{yellow}+%f"
-            KEYTIMEOUT=15
-            VI_MODE_PROMPT_INFO=true
+                  # vi mode confi
+                  VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+                  VI_MODE_SET_CURSOR=true
+                  MODE_INDICATOR="%F{yellow}+%f"
+                  KEYTIMEOUT=15
+                  VI_MODE_PROMPT_INFO=true
 
-            ### "bat" as manpager
-            # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-            # export MANPAGER="nvim -c 'set ft=man' -"
+                  ### "bat" as manpager
+                  # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+                  # export MANPAGER="nvim -c 'set ft=man' -"
 
-            #Template
-            # Fungsi untuk menyalin flake.nix ke folder yang dipilih
+                  #Template
+      # Fungsi untuk menyalin flake.nix ke folder yang dipilih
       copy_flake() {
           echo "Pilih folder tempat Anda ingin menyalin flake.nix:"
 
           # Menampilkan daftar folder dalam direktori template
-          select folder in ~/.config/nixpkgs/template/*; do
-              if [ -n "$folder" ]; then
+          select folder in ~/.config/nixpkgs/template/* "Keluar"; do
+              if [ "$folder" = "Keluar" ]; then
+                  echo "Keluar dari pemilihan folder."
+                  break
+              elif [ -n "$folder" ]; then
                   if [ -d "$folder" ]; then
                       cp "$folder/flake.nix" ./
                       echo "flake.nix berhasil disalin ke $folder"
+                      break
                   else
                       echo "Pilihan tidak valid. Harap pilih folder."
                   fi
-                  break
               else
-                  echo "Pilihan tidak valid. Harap pilih folder."
+                  echo "Pilihan tidak valid. Harap pilih folder atau keluar."
               fi
           done
       }

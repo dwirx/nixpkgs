@@ -1,5 +1,5 @@
 {
-  description = "A ocaml development environment";
+  description = "A Nix-flake-based Zig development environment";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
@@ -12,14 +12,9 @@
     in
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
-        description = "Ocaml.org development environment";
+        description = "ziglang.org development environment";
         default = pkgs.mkShell {
-          packages = with pkgs; [
-            ocaml
-            ocamlformat
-            opam
-          ] ++
-          (with pkgs.ocamlPackages; [ dune_3 odoc ]);
+          packages = with pkgs; [ zig ];
         };
       });
     };
