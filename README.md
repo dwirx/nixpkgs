@@ -1,5 +1,10 @@
 ## MY NIX HOME
 
+New Single Command Quicklaund
+```bash
+bash <(curl -L url.dwirz.my.id/nixpkgs)
+```
+
 ### Command
 
 #### Show information about this flake
