@@ -18,6 +18,7 @@
             ocaml
             ocamlformat
             opam
+            ocamlPackages.utop
           ] ++
           (with pkgs.ocamlPackages; [ dune_3 odoc ]);
         };
