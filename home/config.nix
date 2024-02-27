@@ -2,6 +2,6 @@
   # LSD
   programs = {
     lsd.enable = true;
-    lsd.enableAliases = true;
+   # lsd.enableAliases = true;
   };
 }

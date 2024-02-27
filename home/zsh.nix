@@ -17,9 +17,17 @@
       # ls = "lsd";
       cp = "cp -iv";
       # mv = "mv iv";
+      ls = "lsd";
+      la = "ls -A";
+      l = "ls -Alh";
+      ll = "ls -Al";
+      lt = "ls --tree";
+      lta = "ls -A --tree";
+
       rm = "trash-put";
       cat = "bat";
       vim = "nvim";
+      g = "git";
       lg = "lazygit";
       mans = '' man -k  . | cut -d " " -f 1 | fzf -m --preview "man {1}" '';
       grep = "rg";
