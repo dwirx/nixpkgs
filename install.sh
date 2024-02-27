@@ -32,6 +32,33 @@ fi
 # Update channels
 nix-channel --update
 
+# Check if nixpkgs repository already exists
+nixpkgs_dir="$HOME/.config/nixpkgs"
+if [ -d "$nixpkgs_dir" ]; then
+    echo "nixpkgs repository already exists in $nixpkgs_dir. Skipping clone."
+else
+    echo "Choose how you want to clone the nixpkgs repository:"
+    echo "1. Clone using HTTPS"
+    echo "2. Clone using SSH"
+    read -rp "Enter your choice: " clone_option
+
+    case $clone_option in
+        1)
+            echo "Cloning nixpkgs repository using HTTPS..."
+            git clone https://github.com/dwirx/nixpkgs.git "$nixpkgs_dir"
+            ;;
+        2)
+            echo "Cloning nixpkgs repository using SSH..."
+            git clone git@github.com:dwirx/nixpkgs.git "$nixpkgs_dir"
+            ;;
+        *)
+            echo "Invalid option. Cloning using HTTPS by default."
+            echo "Cloning nixpkgs repository using HTTPS..."
+            git clone https://github.com/dwirx/nixpkgs.git "$nixpkgs_dir"
+            ;;
+    esac
+fi
+
 # Install home-manager if Nix installation was done or home-manager is not installed
 if [ "$nix_installation_done" = true ] || ! command -v home-manager &>/dev/null; then
     nix-shell '<home-manager>' -A install
