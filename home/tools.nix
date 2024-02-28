@@ -6,7 +6,6 @@
   protoc-gen-doc
   protoc-gen-rust
   yarn
-  rustup
   quick-lint-js
   ];
 
