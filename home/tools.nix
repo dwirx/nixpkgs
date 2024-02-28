@@ -8,6 +8,11 @@
   yarn
   quick-lint-js
   rustup
+  sumneko-lua-language-server
+  nodePackages.diagnostic-languageserver
+  nodePackages.bash-language-server
+  clang
+  clang-tools
   ];
 
 }
