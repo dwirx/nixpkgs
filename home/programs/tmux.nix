@@ -1,5 +1,5 @@
-{pkgs, ... }: {
-    # TMUX
+{ pkgs, ... }: {
+  # TMUX
   programs.tmux = {
     enable = true;
     mouse = true;
@@ -10,6 +10,18 @@
       yank
       prefix-highlight
       better-mouse-mode
+
+      {
+        plugin = resurrect;
+        extraConfig = "set -g @resurrect-strategy-nvim 'session'";
+      }
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'off'
+          set -g @continuum-save-interval '5' # minutes
+        '';
+      }
     ];
     shell = "${pkgs.zsh}/bin/zsh";
     extraConfig = ''
