@@ -7,6 +7,7 @@
   protoc-gen-rust
   yarn
   quick-lint-js
+  rustup
   ];
 
 }

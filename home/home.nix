@@ -14,7 +14,7 @@
     # btop
     gdu
     nodejs
-    cargo
+    # cargo
 
     #files
     ranger
