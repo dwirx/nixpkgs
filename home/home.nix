@@ -80,13 +80,13 @@
   # font.fontconfig.enable = true;
   # direnv
   imports = [
-    ./btop.nix
-    ./shell.nix
+    ./programs/git.nix
+    ./programs/zsh.nix
+    ./programs/btop.nix
+    ./programs/tmux.nix
+    ./programs/shell.nix
     ./config.nix
-    ./git.nix
-    ./zsh.nix
-    ./tools.nix
-    ./tmux.nix
+    ./programs/tools.nix
 
   ];
   programs = {
