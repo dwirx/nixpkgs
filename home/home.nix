@@ -139,6 +139,7 @@
     ./config.nix
     ./git.nix
     ./zsh.nix
+    ./tools.nix
 
   ];
   programs = {

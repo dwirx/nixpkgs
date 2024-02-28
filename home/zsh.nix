@@ -79,6 +79,18 @@
       # Alias untuk memudahkan pemanggilan
       alias Tflake=choose_flake
 
+      alias dqlab="conda activate dqlab"
+      alias Jdqlab="jupyter lab --ip=192.168.22.19"
+      
+      # Named Directory Hashes
+      
+      
+      source /nix/store/zdb7qbp09si3wq3hxbldf4ap7knhpyim-zsh-syntax-highlighting-0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+      ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
+      
+      eval "$(/home/hades/miniconda3/bin/conda shell.zsh hook)"
+      
+
 
 
 
