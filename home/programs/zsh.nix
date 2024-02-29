@@ -33,10 +33,10 @@
       mans = '' man -k  . | cut -d " " -f 1 | fzf -m --preview "man {1}" | xargs man '';
       grep = "rg";
       nf = "neofetch";
-      Tflake="cp ~/.config/nixpkgs/template/flake.nix ./flake.nix";
+      Tflake = "cp ~/.config/nixpkgs/template/flake.nix ./flake.nix";
       ".." = "cd ..";
       "..." = "cd ../..";
-      "...."= "cd ../../..";
+      "...." = "cd ../../..";
 
     };
     initExtraFirst = ''
@@ -87,7 +87,9 @@
       alias Jdqlab="jupyter lab --ip=192.168.22.19"
       
       # Named Directory Hashes
-      alias gi='curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@'
+        
+
+      alias gi='function _getgitignore() { curl -L -o .gitignore "https://www.toptal.com/developers/gitignore/api/$1"; }; _getgitignore'
       
       
       source /nix/store/zdb7qbp09si3wq3hxbldf4ap7knhpyim-zsh-syntax-highlighting-0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
