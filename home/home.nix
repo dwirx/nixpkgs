@@ -8,6 +8,8 @@
     #Language
     bun
     #############
+    nodePackages.typescript-language-server
+    nodePackages.vscode-langservers-extracted
 
     bat
     vim
