@@ -37,6 +37,11 @@
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd ../../..";
+      lenv = "nix-env --list-generations";
+      senv = "nix-env --switch-generation";
+      denv = "nix-env --delete-generations";
+      renv = "nix-env --rollback";
+
 
     };
     initExtraFirst = ''
