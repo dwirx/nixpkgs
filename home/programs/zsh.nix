@@ -45,62 +45,77 @@
 
     };
     initExtraFirst = ''
-                  # vi mode confi
-                  VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
-                  VI_MODE_SET_CURSOR=true
-                  MODE_INDICATOR="%F{yellow}+%f"
-                  KEYTIMEOUT=15
-                  VI_MODE_PROMPT_INFO=true
+                        # vi mode confi
+                        VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+                        VI_MODE_SET_CURSOR=true
+                        MODE_INDICATOR="%F{yellow}+%f"
+                        KEYTIMEOUT=15
+                        VI_MODE_PROMPT_INFO=true
 
-                  ### "bat" as manpager
-                  # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-                  # export MANPAGER="nvim -c 'set ft=man' -"
+                        ### "bat" as manpager
+                        # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+                        # export MANPAGER="nvim -c 'set ft=man' -"
 
-                  #Template
-      # Fungsi untuk menyalin flake.nix ke folder yang dipilih
-      copy_flake() {
-          echo "Pilih folder tempat Anda ingin menyalin flake.nix:"
+                        #Template
+            # Fungsi untuk menyalin flake.nix ke folder yang dipilih
+            copy_flake() {
+                echo "Pilih folder tempat Anda ingin menyalin flake.nix:"
 
-          # Menampilkan daftar folder dalam direktori template
-          select folder in ~/.config/nixpkgs/template/* "Keluar"; do
-              if [ "$folder" = "Keluar" ]; then
-                  echo "Keluar dari pemilihan folder."
-                  break
-              elif [ -n "$folder" ]; then
-                  if [ -d "$folder" ]; then
-                      cp "$folder/flake.nix" ./
-                      echo "flake.nix berhasil disalin ke $folder"
-                      break
-                  else
-                      echo "Pilihan tidak valid. Harap pilih folder."
-                  fi
-              else
-                  echo "Pilihan tidak valid. Harap pilih folder atau keluar."
-              fi
+                # Menampilkan daftar folder dalam direktori template
+                select folder in ~/.config/nixpkgs/template/* "Keluar"; do
+                    if [ "$folder" = "Keluar" ]; then
+                        echo "Keluar dari pemilihan folder."
+                        break
+                    elif [ -n "$folder" ]; then
+                        if [ -d "$folder" ]; then
+                            cp "$folder/flake.nix" ./
+                            echo "flake.nix berhasil disalin ke $folder"
+                            break
+                        else
+                            echo "Pilihan tidak valid. Harap pilih folder."
+                        fi
+                    else
+                        echo "Pilihan tidak valid. Harap pilih folder atau keluar."
+                    fi
+                done
+            }
+
+            # Fungsi untuk memanggil fungsi copy_flake
+            choose_flake() {
+                copy_flake
+            }
+
+            # Alias untuk memudahkan pemanggilan
+            alias Tflake=choose_flake
+
+            alias dqlab="conda activate dqlab"
+            alias Jdqlab="jupyter lab --ip=192.168.22.19"
+      
+            # Named Directory Hashes
+        
+
+            alias gi='function _getgitignore() { curl -L -o .gitignore "https://www.toptal.com/developers/gitignore/api/$1"; }; _getgitignore'
+      
+      
+            source /nix/store/zdb7qbp09si3wq3hxbldf4ap7knhpyim-zsh-syntax-highlighting-0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+            ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
+      
+            eval "$(/home/hades/miniconda3/bin/conda shell.zsh hook)"
+            function nclean() {
+          for cmd in \
+              "nix profile wipe-history" \
+              "nix-collect-garbage" \
+              "nix-collect-garbage -d" \
+              "nix-collect-garbage --delete-old" \
+              "nix store gc" \
+              "nix store optimise" \
+              "nix-store --verify --repair --check-contents"
+          do
+              echo "Running command: $cmd"
+              eval $cmd
           done
       }
 
-      # Fungsi untuk memanggil fungsi copy_flake
-      choose_flake() {
-          copy_flake
-      }
-
-      # Alias untuk memudahkan pemanggilan
-      alias Tflake=choose_flake
-
-      alias dqlab="conda activate dqlab"
-      alias Jdqlab="jupyter lab --ip=192.168.22.19"
-      
-      # Named Directory Hashes
-        
-
-      alias gi='function _getgitignore() { curl -L -o .gitignore "https://www.toptal.com/developers/gitignore/api/$1"; }; _getgitignore'
-      
-      
-      source /nix/store/zdb7qbp09si3wq3hxbldf4ap7knhpyim-zsh-syntax-highlighting-0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-      ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
-      
-      eval "$(/home/hades/miniconda3/bin/conda shell.zsh hook)"
       
 
 

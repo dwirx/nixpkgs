@@ -89,6 +89,7 @@
     ./programs/shell.nix
     ./config.nix
     ./programs/tools.nix
+    ./shells.nix
 
   ];
   programs = {
