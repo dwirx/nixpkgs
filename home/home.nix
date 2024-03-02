@@ -3,14 +3,20 @@
   home.homeDirectory = "/home/hades";
   home.stateVersion = "23.11"; # Please read the comment before changing.
   programs.neovim.enable = true;
+  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
-
+    clang-tools
+    sumneko-lua-language-server
+    tree-sitter
+    llvmPackages_12.llvm
+    clang glibc musl
     #Language
     bun
     #############
     sumneko-lua-language-server
     nodePackages.typescript-language-server
     nodePackages.vscode-langservers-extracted
+    rnix-lsp
 
 
     bat
