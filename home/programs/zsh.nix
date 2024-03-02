@@ -100,7 +100,7 @@
             source /nix/store/zdb7qbp09si3wq3hxbldf4ap7knhpyim-zsh-syntax-highlighting-0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
             ZSH_HIGHLIGHT_HIGHLIGHTERS+=()
       
-            eval "$(/home/hades/miniconda3/bin/conda shell.zsh hook)"
+            #eval "$(/home/hades/miniconda3/bin/conda shell.zsh hook)"
             function nclean() {
           for cmd in \
               "nix profile wipe-history" \

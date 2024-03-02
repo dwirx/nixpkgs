@@ -8,8 +8,10 @@
     #Language
     bun
     #############
+    sumneko-lua-language-server
     nodePackages.typescript-language-server
     nodePackages.vscode-langservers-extracted
+
 
     bat
     vim
@@ -90,6 +92,7 @@
     ./config.nix
     ./programs/tools.nix
     ./shells.nix
+    ./vscode.nix
 
   ];
   programs = {
