@@ -34,7 +34,4 @@ return {
       })
     end,
   },
-  {
-    "iPhish/rainbow-delimiters.nvim",
-  }
 }
