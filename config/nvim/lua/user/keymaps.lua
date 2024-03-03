@@ -68,10 +68,10 @@ nnoremap("<leader>q", "<cmd>q<cr>", { silent = false })
 -- Save and Quit with leader key
 nnoremap("<leader>z", "<cmd>wq<cr>", { silent = false })
 
--- Map Oil to <leader>e
-nnoremap("<leader>e", function()
-  require("oil").toggle_float()
-end)
+-- -- Map Oil to <leader>e
+-- nnoremap("<leader>e", function()
+--   require("oil").toggle_float()
+-- end)
 
 -- Center buffer while navigating
 nnoremap("<C-u>", "<C-u>zz")

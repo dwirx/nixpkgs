@@ -5,16 +5,7 @@ return {
     main = "ibl",
     opts = {},
     config = function()
-      require("ibl").setup({
-        scope = {
-          enabled = false,
-          show_start = false,
-          show_end = false,
-        },
-      })
-      -- indent-blankline
       vim.opt.termguicolors = true
-
       local highlight = {
         "RainbowRed",
         "RainbowYellow",
@@ -23,20 +14,23 @@ return {
         "RainbowViolet",
         "RainbowCyan",
       }
-
-      -- local hooks = require("ibl.hooks")
-      -- hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-      -- 	vim.api.nvim_set_hl(0, "IndentBlanklineIndent1", { fg = "#E06C75" })
-      -- 	vim.api.nvim_set_hl(0, "IndentBlanklineIndent2", { fg = "#E5C07B" })
-      -- 	vim.api.nvim_set_hl(0, "IndentBlanklineIndent3", { fg = "#98C379" })
-      -- 	vim.api.nvim_set_hl(0, "IndentBlanklineIndent4", { fg = "#56B6C2" })
-      -- 	vim.api.nvim_set_hl(0, "IndentBlanklineIndent5", { fg = "#61AFEF" })
-      -- 	vim.api.nvim_set_hl(0, "IndentBlanklineIndent6", { fg = "#C678DD" })
-      -- end)
-
+      local hooks = require "ibl.hooks"
+      -- create the highlight groups in the highlight setup hook, so they are reset
+      -- every time the colorscheme changes
+      hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+        vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+        vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+        vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+        vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+        vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+        vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+        vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+      end)
       require("ibl").setup({
-        scope = { enabled = false },
-        indent = { highlight = highlight },
+        scope = {
+          enabled = false,
+        },
+        indent = { highlight = highlight }
       })
     end,
   },
