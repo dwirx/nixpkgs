@@ -99,6 +99,7 @@ return {
         pyright = {},
         solidity = {},
         sqlls = {},
+        rust_analyzer = {},
         tailwindcss = {
           -- filetypes = { "reason" },
         },
