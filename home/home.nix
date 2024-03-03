@@ -15,7 +15,6 @@
     sumneko-lua-language-server
     nodePackages.typescript-language-server
     nodePackages.vscode-langservers-extracted
-    javascript-typescript-langserver
     rnix-lsp
 
 
