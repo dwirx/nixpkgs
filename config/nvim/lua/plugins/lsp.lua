@@ -80,8 +80,8 @@ return {
             run = "onSave"
           },
         },
-        gleam = {},
-        graphql = {},
+        -- gleam = {},
+        -- graphql = {},
         html = {},
         jsonls = {},
         lua_ls = {
@@ -94,11 +94,11 @@ return {
         },
         marksman = {},
         nil_ls = {},
-        ocamllsp = {},
-        prismals = {},
-        pyright = {},
-        solidity = {},
-        sqlls = {},
+        -- ocamllsp = {},
+        -- prismals = {},
+        -- pyright = {},
+        -- solidity = {},
+        -- sqlls = {},
         rust_analyzer = {},
         tailwindcss = {
           -- filetypes = { "reason" },
