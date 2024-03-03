@@ -5,15 +5,11 @@ local M = {
 }
 
 function M.config()
-  local wk = require "which-key"
   local harpoon = require("harpoon")
 
   -- REQUIRED
   harpoon:setup()
   -- REQUIRED
-  wk.register {
-    ["<leader>ma"] = { function() harpoon:list():append() end, "Harpoon2" }
-  }
 
   vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
   -- vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
