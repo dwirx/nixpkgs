@@ -8,6 +8,7 @@
     clang-tools
     tree-sitter
     clang 
+    python3
     #Language
     bun
     #############
