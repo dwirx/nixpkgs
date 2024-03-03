@@ -6,10 +6,8 @@
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     clang-tools
-    sumneko-lua-language-server
     tree-sitter
-    llvmPackages_12.llvm
-    clang glibc musl
+    clang 
     #Language
     bun
     #############
@@ -99,6 +97,7 @@
     ./programs/tools.nix
     ./shells.nix
     ./vscode.nix
+    ./programs/nvim.nix
 
   ];
   programs = {

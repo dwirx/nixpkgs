@@ -115,6 +115,7 @@
               eval $cmd
           done
       }
+      export PATH=/home/hades/.local/bin:$PATH
 
       
 
